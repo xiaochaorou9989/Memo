@@ -26,6 +26,7 @@ A: Edit configure file. Change the line `$RM "$cfgfile"` to `$RM -f "$cfgfile"`�
 
 ### 安装 apache。
 Q: error while loading shared libraries: libpcre.so.1: cannot open shared object file: No such file or directory.
+
 A: `ln -s /usr/local/lib/libpcre.so.1 /lib` or `ln -s /usr/local/lib/libpcre.so.1 /lib64`
 
 ### 安装 mysql。
@@ -52,7 +53,7 @@ make && make install
 
 Q: configure php源码的时候报错： Cannot find ldap libraries in /usr/lib。
 
-A: 去掉 `configure --with-ldap` 参数进行安装，安装完成后按照 **安装 php 扩展** 的方法单独安装 ldap 扩展，configure 的时候如果依然报错，加上 `--with-libdir=/usr/lib/x86_64-linux-gnu` 参数。
+A: 去掉 configure `--with-ldap` 参数进行安装，安装完成后按照 **安装 php 扩展** 的方法单独安装 ldap 扩展，configure 的时候如果依然报错，加上 `--with-libdir=/usr/lib/x86_64-linux-gnu` 参数。
 
 ##### 安装 xdebug。
 ```
