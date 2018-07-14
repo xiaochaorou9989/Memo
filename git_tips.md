@@ -20,3 +20,7 @@ pick xxxx00
 合并完毕。
 
 如果要 push 到远程，需要给 push 添加 -f 参数。
+
+### 撤销所有未提交暂存区的修改
+
+`git checkout .`
