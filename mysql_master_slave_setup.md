@@ -10,7 +10,7 @@
 
 ### 主库 Master 配置
 
-1 创建可供从库访问主库的用户
+1. 创建可供从库访问主库的用户
 
 ```
 mysql > GRANT REPLICATION SLAVE ON *.* TO 'slave01'@'192.168.8.188' IDENTIFIED BY 'salve01password';
@@ -19,7 +19,7 @@ mysql > FLUSH PRIVILLEGES;
 
 REPLICATION SLAVE 权限是全局的，所以此处必须是 `*.*`，不然会报错。需要同步指定的数据库可以通过步骤 2 在主库配置文件中配置 `binlog-do-db` 项。
 
-2 修改主库配置文件，开启 binlog
+2. 修改主库配置文件，开启 binlog
 
 ```
 [mysqld]
@@ -40,7 +40,7 @@ log-bin=/var/log/mysql-binlog
 
 **最后重启 MySQL**。
 
-3 查看主库当前 binlog 的名称和偏移量，记录下来供从库使用
+3. 查看主库当前 binlog 的名称和偏移量，记录下来供从库使用
 
 ```
 mysql > SHOW MASTER STATUS;
@@ -52,7 +52,7 @@ mysql > SHOW MASTER STATUS;
 
 ### 从库 Slave 配置
 
-1 修改从库配置文件
+1. 修改从库配置文件
 
 ```
 [mysqld]
@@ -78,7 +78,7 @@ mysql > CHANGE MASTER TO MASTER_HOST = '192.168.8.51',
 
 **重启 MySQL**。
 
-2 启动 SLAVE
+2. 启动 SLAVE
 
 ```
 mysql > SLAVE START;
@@ -86,7 +86,7 @@ mysql > SLAVE START;
 
 使用 `SHOW SLAVE STATUS\G;` 查看 SLAVE 状态。`Slave_IO_Running` 和 `Slave_SQL_Running` 均为 `Yes` 则表示 SLAVE 运行正常。
 
-3 取消主从关系
+3. 取消主从关系
 
 ```
 mysql > SLAVE STOP;
