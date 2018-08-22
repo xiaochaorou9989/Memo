@@ -2,7 +2,7 @@
 
 [Git Tips](./git_tips.md)
 
-[MySql cli Tips](./mysql_cli_tips.md)
+[MySQL cli Tips](./mysql_cli_tips.md)
 
 [Vim Tips](./vim_tips.md)
 
@@ -17,4 +17,6 @@
 [Windows 上使用 Vagrant](./vagrant_virtualbox_on_windows.md)
 
 [PHPStorm 上设置 Xdebug](./xdebug_on_phpstorm.md)
+
+[MySQL 主从配置](./mysql_master_slave_setup.md)
 
