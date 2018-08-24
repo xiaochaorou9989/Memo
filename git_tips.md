@@ -24,3 +24,14 @@ pick xxxx00
 ### 撤销所有未提交暂存区的修改
 
 `git checkout .`
+
+### 合并其它分支的指定文件(覆盖)到当前分支
+
+```
+// on branch master
+git checkout dev readme.md base.php
+git add -A
+git commit -m "modify files"
+```
+
+以上命令将 `dev` 分支的 `/readme.md` 和 `/base.php` 文件合并到 `master` 分支。**注意**，此合并会用 `dev` 分支上的指定文件强制覆盖当前分支的文件，即使当前分支的文件与 `dev` 分支的文件存在不同。
