@@ -20,3 +20,4 @@
 
 [MySQL 主从配置](./mysql_master_slave_setup.md)
 
+[Windows 开发相关小工具](./windows_helpers.md)
