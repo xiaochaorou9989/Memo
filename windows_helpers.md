@@ -19,3 +19,21 @@ nssm install Mycat "mycat console"
 ```
 
 更多参考：[NSSM](http://nssm.cc/usage)
+
+### WinScp Windows 下使用 scp 传输文件
+
+下载 WinScp，然后将执行文件目录放入系统环境变量。
+
+##### 使用：
+
+```
+# 下载
+
+winscp /console /command "option batch continue" "option confirm off" "open ssh:root:password@host:port" "option transfer binary" "get //path/to/dir/ E:\local\dir" "exit" /log=E:\log\dir\scp.log
+
+# 上传
+
+winscp /console /command "option batch continue" "option confirm off" "open ssh:root:password@host:port" "option transfer binary" "put E:\local\dir\ //path/to/dir/" "exit" /log=E:\log\dir\scp.log
+```
+
+更多参考：[WinScp Document](https://winscp.net/eng/docs/commandline)
