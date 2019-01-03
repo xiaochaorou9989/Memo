@@ -21,3 +21,5 @@
 [MySQL 主从配置](./mysql_master_slave_setup.md)
 
 [Windows 开发相关小工具](./windows_helpers.md)
+
+[Pentaho Data Integration(ETL) - Kettle Tips](./kettle_tips.md)
