@@ -28,7 +28,7 @@ if "%PENTAHO_DI_JAVA_OPTIONS%"=="" set PENTAHO_DI_JAVA_OPTIONS="-Xms1024m" "-Xmx
 
 * 中文乱码问题
 
-尝试再数据库连接属性 - 选项 中添加 `characterEncoding = utf8`。如果无效，再尝试在 spoon.bat 中添加参数 `-Dfile.encoding=UTF-8`，具体位置如下：
+尝试在数据库连接属性 - 选项 中添加 `characterEncoding = utf8`。如果无效，再尝试在 spoon.bat 中添加参数 `-Dfile.encoding=UTF-8`，具体位置如下：
 
 ```
 set OPT=%OPT% %PENTAHO_DI_JAVA_OPTIONS% "-Dhttps.protocols=TLSv1,TLSv1.1,TLSv1.2" "-Djava.library.path=%LIBSPATH%" "-DKETTLE_HOME=%KETTLE_HOME%" "-DKETTLE_REPOSITORY=%KETTLE_REPOSITORY%" "-DKETTLE_USER=%KETTLE_USER%" "-DKETTLE_PASSWORD=%KETTLE_PASSWORD%" "-DKETTLE_PLUGIN_PACKAGES=%KETTLE_PLUGIN_PACKAGES%" "-DKETTLE_LOG_SIZE_LIMIT=%KETTLE_LOG_SIZE_LIMIT%" "-DKETTLE_JNDI_ROOT=%KETTLE_JNDI_ROOT%" "-Dfile.encoding=UTF-8"

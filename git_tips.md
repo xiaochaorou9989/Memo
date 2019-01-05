@@ -49,3 +49,13 @@ echo '/path/to/dir/you/want/in/repo' >> .git/info/sparse-checkout
 git remote add origin https://github.com/theRepoYouWant.git
 git pull origin master
 ```
+
+### 克隆指定分支到指定目录
+
+```
+# format
+git clone -b branchname https://host/path/to/demo.git /path/to/local
+
+# sample 克隆 Laravel 的 develop 分支到本地 ./blog 目录
+git clone -b develop https://github.com/laravel/laravel.git ./blog/
+```
