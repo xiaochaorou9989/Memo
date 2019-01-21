@@ -20,3 +20,7 @@
 
 [MySQL 主从配置](./mysql_master_slave_setup.md)
 
+[全干指北](./2018_tips.md)
+
+[入手laravel](./laravel_tips.md)
+
