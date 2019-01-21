@@ -35,3 +35,27 @@ git commit -m "modify files"
 ```
 
 以上命令将 `dev` 分支的 `/readme.md` 和 `/base.php` 文件合并到 `master` 分支。**注意**，此合并会用 `dev` 分支上的指定文件强制覆盖当前分支的文件，即使当前分支的文件与 `dev` 分支的文件存在冲突。
+
+### 仅克隆/拉取仓库的指定目录
+
+使用 sparse-checkout 来实现。
+
+```
+mkdir myproject
+cd myproject
+git init
+git config core.sparsecheckout true
+echo '/path/to/dir/you/want/in/repo' >> .git/info/sparse-checkout
+git remote add origin https://github.com/theRepoYouWant.git
+git pull origin master
+```
+
+### 克隆指定分支到指定目录
+
+```
+# format
+git clone -b branchname https://host/path/to/demo.git /path/to/local
+
+# sample 克隆 Laravel 的 develop 分支到本地 ./blog 目录
+git clone -b develop https://github.com/laravel/laravel.git ./blog/
+```
