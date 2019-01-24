@@ -20,6 +20,18 @@
 
 [MySQL 主从配置](./mysql_master_slave_setup.md)
 
+[SQL Tips](./sql_tip.md)
+
+[JAVA Tips](./java_tips.md)
+
+[Laravel Tips](./laravel_tips.md)
+
+[Django Tips](./django_tips.md)
+
+[Tomcat Tips](./tomcat_tips.md)
+
+[Blog Tips](./blog_tips.md)
+
 [Windows 开发相关小工具](./windows_helpers.md)
 
 [Pentaho Data Integration(ETL) - Kettle Tips](./kettle_tips.md)
