@@ -20,11 +20,13 @@
 
 [MySQL 主从配置](./mysql_master_slave_setup.md)
 
-[全干指北](./2018_tips.md)
+[SQL Tips](./sql_tip.md)
 
-[入手laravel](./laravel_tips.md)
+[JAVA Tips](./java_tips.md)
 
-[sql入门以后](./sql_tip.md)
+[Laravel Tips](./laravel_tips.md)
+
+[Django Tips](./django_tips.md)
 
 [Windows 开发相关小工具](./windows_helpers.md)
 

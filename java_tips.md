@@ -368,20 +368,6 @@ unzip zip
 
 ---
 
-### sql
-
-```
-group_concat( t3.order_uuid ) order_uuid
-
-将多个字符串连接成一个字符串
-
-配合GROUP BY使用
-```
-
-> show engine innodb status 查看死锁
-
----
-
 ### ova怎么安装到vmware虚拟机里面去
 
 1. 打开VMWare WorkStation, 点击“打开虚拟机”，选择要导入的ova文件；
