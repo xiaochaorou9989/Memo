@@ -59,3 +59,27 @@ git clone -b branchname https://host/path/to/demo.git /path/to/local
 # sample 克隆 Laravel 的 develop 分支到本地 ./blog 目录
 git clone -b develop https://github.com/laravel/laravel.git ./blog/
 ```
+
+
+### 更新及查看日志
+
+```
+# 更新
+git fetch origin
+
+# 本地与远程的差集
+git log master..origin/master
+
+# 统计文件的改动
+git diff -3 --stat master origin/master
+git log -3 --stat dev..origin/dev
+
+# 可以看到fileName相关的commit记录
+git log filename
+
+# 可以显示每次提交的diff
+git log -p filenam
+
+# 只看某次提交中的某个文件变化，可以直接加上fileName
+git show c5e69804bbd9725b5dece57f8cbece4a96b9f80b filename
+```
