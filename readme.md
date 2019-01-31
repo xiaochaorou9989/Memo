@@ -32,6 +32,8 @@
 
 [Blog Tips](./blog_tips.md)
 
+[Linux Tips](./linux_tips.md)
+
 [Windows 开发相关小工具](./windows_helpers.md)
 
 [Pentaho Data Integration(ETL) - Kettle Tips](./kettle_tips.md)
