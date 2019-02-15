@@ -1,4 +1,4 @@
-# Upload 相关 <PHP>
+# Upload 相关 (PHP)
 
 ### $_FILES
 
@@ -51,7 +51,7 @@ array (size=2)
 
 通过文件头判断文件类型的方法片段：
 
-```
+```php
 function getFileType($stream) {
 	$bin = mb_substr($stream, 0, 2);
 	$str_info  = @unpack("C2chars", $bin);
