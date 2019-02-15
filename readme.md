@@ -37,3 +37,5 @@
 [Windows 开发相关小工具](./windows_helpers.md)
 
 [Pentaho Data Integration(ETL) - Kettle Tips](./kettle_tips.md)
+
+[Upload 相关](./upload_tips.md)
