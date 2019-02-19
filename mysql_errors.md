@@ -1,5 +1,7 @@
 # MySQL Error Logs
 
+**数据库的所有操作之前都请首先进行备份处理，避免造成二次损害**
+
 ### MySQL 启动失败（1067），错误日志：Error: could not open single-table tablespace file ./mysql/innodb_index_stats.ibd
 
 Fix: 
