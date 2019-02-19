@@ -20,6 +20,8 @@
 
 [MySQL 主从配置](./mysql_master_slave_setup.md)
 
+[MySQL Error Logs](./mysql_errors.md)
+
 [SQL Tips](./sql_tip.md)
 
 [JAVA Tips](./java_tips.md)
