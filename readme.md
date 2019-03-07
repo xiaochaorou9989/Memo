@@ -20,6 +20,10 @@
 
 [Let's Encrypt Tips](./letsencrypt_tips.md)
 
+[MySQL Error Logs](./mysql_errors.md)
+
+[SQL Tips](./sql_tip.md)
+
 [Linux 入门](./linux_tips.md)
 
 [MySQL cli Tips](./mysql_cli_tips.md)
@@ -47,3 +51,7 @@
 [Windows 开发相关小工具](./windows_helpers.md)
 
 [PHPStorm 上设置 Xdebug](./xdebug_on_phpstorm.md)
+
+[Pentaho Data Integration(ETL) - Kettle Tips](./kettle_tips.md)
+
+[Upload 相关](./upload_tips.md)
