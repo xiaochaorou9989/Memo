@@ -22,7 +22,7 @@
 
 [MySQL Error Logs](./mysql_errors.md)
 
-[SQL Tips](./sql_tip.md)
+[SQL Tips](./sql_tips.md)
 
 [Linux 入门](./linux_tips.md)
 
@@ -30,9 +30,7 @@
 
 [MySQL 主从配置](./mysql_master_slave_setup.md)
 
-[Redis 入门](./tomcat_tips.md)
-
-[SQL 初级](./sql_tip.md)
+[Redis 入门](./redis_tips.md)
 
 [Shadowsocks Tips](./ss_tips.md)
 
