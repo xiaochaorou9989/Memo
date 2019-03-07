@@ -83,3 +83,111 @@ git log -p filenam
 # 只看某次提交中的某个文件变化，可以直接加上fileName
 git show c5e69804bbd9725b5dece57f8cbece4a96b9f80b filename
 ```
+
+
+
+
+
+```
+# 撤销工作区中当前目录中的所有更改
+git checkout .
+
+# 撤销工作区中指定文件的修改
+git checkout -- filename
+
+# 切换到指定的分支（如果分支在本地不存在，会自动从远程仓库拉取下来）
+git checkout develop
+ 
+# 切换分支的同时，创建分支
+git checkout -b my-dev
+
+# 针对文件回退本地修改
+git checkout HEAD file/to/restore 
+
+# 查看工作区和版本库的区别
+git diff
+
+# 比较两个版本之间的差异
+git diff 4129523 0a7d9af
+
+# 比较之前的版本和当前版本的差异
+git diff 4129523 head
+ 
+# 比较某个文件在两个版本之间的差异
+git diff 09d9b45 head ./config/app.php
+ 
+# 比较之前的版本和当前版本的差异的简写形式
+git diff 4129523
+
+# 比较 develop 分支和 master 分支的区别
+git diff develop master
+
+# 对比本地的 develop 分支和远程的 master 分支的区别
+git diff develop origin/master
+
+# 查看版本库的历史记录
+git log
+ 
+# 查看版本库的历史记录，美化输出
+git log --pretty=oneline
+ 
+# 查看版本库的历史记录，只显示前 5 条
+git log -5
+git log -5 --pretty=oneline
+
+# 回滚到指定的版本
+git reset --hard e377f60e28c8b84158 
+
+# 撤销工作区和暂存区中的修改
+git reset --hard
+
+# 撤销暂存区中的修改
+git reset
+
+# 回退到上一个版本
+git reset --hard head^
+
+# 回退到上一个版本
+git reset --hard HEAD^ 
+
+# 查看当前的版本号
+git rev-parse HEAD
+
+# 强制提交
+git push -f origin master 
+
+# 打标签并添加说明（-m后面的可以不写）
+git tag -a v3.2.1 -m '线上版本' 
+
+# 将标签提交到远程仓库
+git push origin v3.2.1 
+	
+# 查看标签
+git tag 
+
+# 查看指定版本号
+git show v3.2.1 
+
+####
+
+# error: 
+Your local changes to the following files would be overwritten by merge:
+Please, commit your changes or stash them before you can merge.
+
+# 先将本地修改存储起来
+git stash 
+
+# pull内容
+git pull 
+
+# 还原暂存的内容
+git stash pop 
+
+# 确认代码自动合并的情况
+git diff -w +文件名 
+
+####
+
+```
+
+
