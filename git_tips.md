@@ -8,7 +8,7 @@
 
 会得到如下格式数据：
 
-```
+```shell
 pick abc356
 pick 356abc
 pick xxxx00
@@ -27,7 +27,7 @@ pick xxxx00
 
 ### 合并其它分支的指定文件(覆盖)到当前分支
 
-```
+```shell
 // on branch master
 git checkout dev readme.md base.php
 git add -A
@@ -40,7 +40,7 @@ git commit -m "modify files"
 
 使用 sparse-checkout 来实现。
 
-```
+```shell
 mkdir myproject
 cd myproject
 git init
@@ -52,7 +52,7 @@ git pull origin master
 
 ### 克隆指定分支到指定目录
 
-```
+```shell
 # format
 git clone -b branchname https://host/path/to/demo.git /path/to/local
 
@@ -60,10 +60,24 @@ git clone -b branchname https://host/path/to/demo.git /path/to/local
 git clone -b develop https://github.com/laravel/laravel.git ./blog/
 ```
 
+### 当前分支不提交且干净地切换到其它分支开始工作
+
+```shell
+# on branch new_ver
+git stash
+git checkout old_ver
+git add .
+git commit -m "old_ver complete"
+git checkout new_ver
+git stash pop
+# git stash list 列出当前暂存
+```
+
+在重构旧版本，且旧版本暂时仍在服务期时，频繁切换分支工作，`git stash` 很有用。
 
 ### 更新及查看日志
 
-```
+```shell
 # 更新
 git fetch origin
 
@@ -84,11 +98,7 @@ git log -p filenam
 git show c5e69804bbd9725b5dece57f8cbece4a96b9f80b filename
 ```
 
-
-
-
-
-```
+```shell
 # 撤销工作区中当前目录中的所有更改
 git checkout .
 
@@ -185,9 +195,4 @@ git stash pop
 
 # 确认代码自动合并的情况
 git diff -w +文件名 
-
-####
-
 ```
-
-
