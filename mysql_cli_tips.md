@@ -120,3 +120,10 @@ SET PASSWORD FOR 'user_name'@'host' = password('new_password_here');
 4. 退出 mysql，把第一步加入的东西去掉或注释掉，重启 mysql。
 
 5. 完成。
+
+### 修改表编码字符集，同时更改表内字段的
+
+```sql
+ALTER TABLE `tablename`
+  CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+```
