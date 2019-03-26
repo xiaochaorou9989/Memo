@@ -53,3 +53,7 @@
 [Pentaho Data Integration(ETL) - Kettle Tips](./kettle_tips.md)
 
 [Upload 相关](./upload_tips.md)
+
+[idea快捷键](./idea.md)
+
+[swoole安装](./swoole.md)
