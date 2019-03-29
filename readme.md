@@ -57,3 +57,5 @@
 [idea快捷键](./idea.md)
 
 [swoole安装](./swoole.md)
+
+[docker方式部署gitlab](./gitlab.md)
