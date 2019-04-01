@@ -59,3 +59,5 @@
 [swoole安装](./swoole.md)
 
 [docker方式部署gitlab](./gitlab.md)
+
+[docker方式部署jenkins](./jenkins.md)
