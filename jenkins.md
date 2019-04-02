@@ -57,7 +57,7 @@ gitlab的webhook在添加url时用的内网ip加端口（经过测试可成功�
 ```
 
 ### 构建后操作（构建后通常会部署jar到服务器上并启动）
-~~ 部署方案：把jenkins里构建好的jar包远程部署到宿主机里（docker宿主机的内网ip为172.17.0.1） ~~
+** 部署方案：把jenkins里构建好的jar包远程部署到宿主机里（docker宿主机的内网ip为172.17.0.1） **
 ```
 jenkins后台->系统管理->系统设置->Publish over SSH->新增：填写宿主机的账号密码和目录
 
@@ -85,6 +85,16 @@ chmod 777 /root/web/target/demo-0.0.1-SNAPSHOT.jar
 echo "执行....."
 java -jar /root/web/target/demo-0.0.1-SNAPSHOT.jar > /root/web/catalina.out  2>&1 &
 ```
+
+---
+
+## 其他的操作
+```
+在系统设置里配置gitlab的token；Publish over SSH配置免密登录（可能会用到）
+在全局安全配置里去掉跨站请求伪造保护（可能会用到）
+全局工具配置编辑（可能会用到）
+```
+
 
 ---
 ## 常用命令
