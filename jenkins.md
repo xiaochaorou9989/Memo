@@ -16,6 +16,7 @@ docker run \
 -u root \
 -v /root/jenkinsdir:/var/jenkins_home \
 jenkinsci/jenkins:latest
+```
 
 ### 查看密码（此密码只用来安装jenkins）
 ```
