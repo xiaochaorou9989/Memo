@@ -54,6 +54,7 @@ gitlab设置
 注意
 因为gitlab和jenkins用的同一个域名
 gitlab的webhook在添加url时用的内网ip加端口（经过测试可成功通信）
+gitlab的钩子不仅仅只能和jenkins搭配，可以自定义部署接口
 ```
 
 ### 构建后操作（构建后通常会部署jar到服务器上并启动）
