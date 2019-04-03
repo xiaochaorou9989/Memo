@@ -11,3 +11,4 @@ Lombok plugin
 MyBatisCodeHelperPro mapper转到xml
 Translation 翻译
 mybatis plugin 查看完整sql及性能
+sonarlint 代码优化工具
