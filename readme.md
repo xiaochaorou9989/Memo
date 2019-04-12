@@ -61,3 +61,6 @@
 [docker方式部署gitlab](./gitlab.md)
 
 [docker方式部署jenkins](./jenkins.md)
+
+[docker方式部署rabbitmq和zipkin](./rabbitmq_zipkin.md)
+
