@@ -11,39 +11,14 @@ https://zipkin.io/
 docker run -d -p 9411:9411 openzipkin/zipkin
 ```
 
-### springcloud集成配置
+### docker-compose安装方法（简单安装，服务隔离，且解决因为没配置好zipkin没有收到消息的问题）
 ```
-pom
-<dependency>
-	<groupId>org.springframework.cloud</groupId>
-	<artifactId>spring-cloud-sleuth-zipkin</artifactId>
-</dependency>
-<dependency>
-	<groupId>org.springframework.amqp</groupId>
-	<artifactId>spring-rabbit</artifactId>
-</dependency>
-
-yml
-spring:
-	rabbitmq:
-		host: 192.168.3.23
-		port:  5672
-		username: guest
-		password: guest
-	zipkin:
-		service:
-			name: zipkin
-		base-url: http://192.168.3.23:9411
-		compression:
-			enabled: true
-		message-timeout: 6000
-```
-
-### 出现的问题
-```
-zipkin追踪不到消息
-去掉mq依赖和远程配置中心正常
-本质上应该是哪个节点没有通
-单体到mq是否通畅
-mq上报到zipkin是否通畅
+克隆yml文件 git clone https://github.com/fleam/zipkin-rabbitmq-docker-compose.git
+替换docer-compose https://dn-dao-github-mirror.daocloud.io/docker/compose/releases/download/1.24.0/docker-compose-Linux-x86_64
+查看镜像 docker images
+删除镜像 docker rmi fd990a821543
+重启docker systemctl restart  docker
+docker-compose build
+docker-compose build --no-cache
+docker-compose up
 ```
