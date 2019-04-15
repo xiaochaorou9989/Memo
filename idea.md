@@ -10,5 +10,5 @@ ctrl+h 查看类或接口的继承关系
 Lombok plugin
 MyBatisCodeHelperPro mapper转到xml
 Translation 翻译
-mybatis plugin 查看完整sql及性能
+Mybatis Log Plugins 查看完整sql及性能
 sonarlint 代码优化工具
