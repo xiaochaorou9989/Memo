@@ -15,37 +15,39 @@ mysql -hlocalhost -uroot -p
 ### backup database
 
 ```shell
-mysqldump -hlocalhost -uroot -p database_name > path.to.backup.file.sql
+mysqldump -hlocalhost -uroot -p database_name > /path/to/backup/file.sql
+# specified database, table or query
+mysqldump -hlocalhost -uroot -p --databases database_name --tables table_name --where="id < 10000" --no-tablespaces > /path/to/backup/file.sql
 ```
 
 or 
 
 ```shell
-mysqldump -hlocalhost -uroot -p database_name | gzip > path.to.backup.file.sql.gz
+mysqldump -hlocalhost -uroot -p database_name | gzip > /path/to/backup/file.sql.gz
 ```
 
 ### restore database
 
 ```shell
-mysql -hlocalhost -uroot -p database_name < path.to.backup.file.sql
+mysql -hlocalhost -uroot -p database_name < /path/to/backup/file.sql
 ```
 
 or
 
 ```shell
-cat path.to.backup.file.sql | mysql -hlocalhost -uroot -p database_name
+cat /path/to/backup/file.sql | mysql -hlocalhost -uroot -p database_name
 ```
 
 or gzip
 
 ```shell
-gunzip < path.to.backup.file.sql.gz | mysql -hlocalhost -uroot -p database_name
+gunzip < /path/to/backup/file.sql.gz | mysql -hlocalhost -uroot -p database_name
 ```
 
 ### create database
 
 ```sql
-create database if not exists database_name CHARACTER SET utf8 COLLATE utf8_general_ci
+create database if not exists database_name CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci
 ```
 
 参考：[http://dev.mysql.com/doc/refman/5.7/en/sql-syntax.html](http://dev.mysql.com/doc/refman/5.7/en/sql-syntax.html) 
