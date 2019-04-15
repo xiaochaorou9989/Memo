@@ -12,3 +12,4 @@ MyBatisCodeHelperPro mapper转到xml
 Translation 翻译
 Mybatis Log Plugins 查看完整sql及性能
 sonarlint 代码优化工具
+jrebel 热部署
