@@ -7,18 +7,19 @@ mysql -hlocalhost -uroot -p
 ```
 
 > -h: server address
-
 > -u: user name
-
 > -p: password，可直接在参数后跟上密码(`-ppassword`)也可不跟然后按照提示输入密码。
 
 ### backup database
 
 ```shell
-mysqldump -hlocalhost -uroot -p database_name > /path/to/backup/file.sql
+mysqldump -hlocalhost -uroot -p -q database_name > /path/to/backup/file.sql
 # specified database, table or query
-mysqldump -hlocalhost -uroot -p --databases database_name --tables table_name --where="id < 10000" --no-tablespaces > /path/to/backup/file.sql
+mysqldump -hlocalhost -uroot -p -q --databases database_name --tables table_name --where="id < 10000" --no-tablespaces --no-create-info --single-transaction > /path/to/backup/file.sql
 ```
+
+> `--no-create-info`: 不带表构造信息，纯数据
+> `--single-transaction`: 防止执行时锁死整个库
 
 or 
 
