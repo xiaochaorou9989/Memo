@@ -24,6 +24,8 @@
 
 [力扣](https://www.lintcode.com/problem/3sum-closest/description)
 
+[红黑树动画](https://www.cs.usfca.edu/~galles/visualization/RedBlack.html)
+
 
 
 
