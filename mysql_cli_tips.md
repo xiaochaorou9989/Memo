@@ -142,3 +142,12 @@ mysqldump --xml -t -uroot -p database_name > /path/to/data.xml
 
 mysqldump --xml -uroot -p database_name > /path/to/data.xml
 ```
+
+### 清除表字段中的空白字符（空格、换行、Tab）
+
+```sql
+UPDATE `tablename`  
+SET `name` = REPLACE(REPLACE(REPLACE(REPLACE(`name`, CHAR(32),''), CHAR(9), ''), CHAR(10), ''), CHAR(13), '');
+```
+
+PS: 两端清除空格可以使用 TRIM 函数。
