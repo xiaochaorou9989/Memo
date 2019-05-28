@@ -127,12 +127,6 @@ SET PASSWORD FOR 'user_name'@'host' = password('new_password_here');
 
 5. 完成。
 
-### 修改表编码字符集，同时更改表内字段的
-
-```sql
-ALTER TABLE `tablename`
-  CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-```
 ### 导出 XML 格式数据库
 
 ```shell
@@ -142,12 +136,3 @@ mysqldump --xml -t -uroot -p database_name > /path/to/data.xml
 
 mysqldump --xml -uroot -p database_name > /path/to/data.xml
 ```
-
-### 清除表字段中的空白字符（空格、换行、Tab）
-
-```sql
-UPDATE `tablename`  
-SET `name` = REPLACE(REPLACE(REPLACE(REPLACE(`name`, CHAR(32),''), CHAR(9), ''), CHAR(10), ''), CHAR(13), '');
-```
-
-PS: 两端清除空格可以使用 TRIM 函数。
