@@ -17,17 +17,19 @@ mysql -hlocalhost -uroot -p
 ```shell
 mysqldump -hlocalhost -uroot -p -q database_name > /path/to/backup/file.sql
 # specified database, table or query
-mysqldump -hlocalhost -uroot -p -q --databases database_name --tables table_name --where="id < 10000" --no-tablespaces --no-create-info --single-transaction > /path/to/backup/file.sql
+mysqldump -hlocalhost -uroot -p -q --databases database_name --tables table_name --where="id < 10000" --no-tablespaces --no-create-info --single-transaction --skip-tz-utc > /path/to/backup/file.sql
 ```
 
 > `--no-create-info`: 不带表构造信息，纯数据
 >
 > `--single-transaction`: 防止执行时锁死整个库
+> 
+> `--skip-tz-utc`: 阻止 MySQL 的时区转换，避免 `TIMESTAMP` 字段时间回退 8 小时
 
 or 
 
 ```shell
-mysqldump -hlocalhost -uroot -p database_name | gzip > /path/to/backup/file.sql.gz
+mysqldump -hlocalhost -uroot -p -q database_name | gzip > /path/to/backup/file.sql.gz
 ```
 
 ### restore database
@@ -51,10 +53,10 @@ gunzip < /path/to/backup/file.sql.gz | mysql -hlocalhost -uroot -p database_name
 ### create database
 
 ```sql
-create database if not exists database_name CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci
+CREATE DATABASE IF NOT EXISTS `database_name` CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci
 ```
 
-参考：[http://dev.mysql.com/doc/refman/5.7/en/sql-syntax.html](http://dev.mysql.com/doc/refman/5.7/en/sql-syntax.html) 
+参考：[http://dev.mysql.com/doc/refman/5.7/en/sql-syntax.html](http://dev.mysql.com/doc/refman/5.7/en/sql-syntax.html)
 
 ### create user
 
@@ -82,19 +84,23 @@ GRANT privilege_name ON database_name.table_name TO 'user_name'@'host';
 FLUSH PRIVILEGES;
 ```
 
-for example: 
-
-授予用户 test 数据库 db_test 所有表权限
+例如: 
 
 ```sql
-GRANT ALL ON db_test.* TO 'test'@'localhost';
+-- 授予用户 test 数据库 db_test 所有表权限
+GRANT ALL ON `db_test`.* TO 'test'@'localhost';
+-- 授予用户 test 数据库 db_test 的 post 表的 SELECT, INSERT, UPDATE 权限
+GRANT SELECT, INSERT, UPDATE ON `db_test`.`post` TO 'test'@'localhost';
+
 FLUSH PRIVILEGES;
 ```
+
+参考：[https://dev.mysql.com/doc/refman/5.7/en/grant.html](https://dev.mysql.com/doc/refman/5.7/en/grant.html)
 
 ### remove privileges of user
 
 ```sql
-REVOKE privilege_name ON database_name.table_name FROM 'username'@'host';
+REVOKE privilege_name ON `database_name`.`table_name` FROM 'username'@'host';
 ```
 
 ### modify password
