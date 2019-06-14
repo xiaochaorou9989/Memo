@@ -81,7 +81,7 @@
 		export YARN_NODEMANAGER_USER="root"
 		```
 		
-		修改etc/hadoop/core-site.xml，把配置改成：
+		*** 修改etc/hadoop/core-site.xml，把配置改成： ***
 		
 		```
 		<configuration>
