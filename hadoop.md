@@ -49,7 +49,7 @@
 		vim /etc/profile
 
 		```
-		export JAVA_HOME=/usr/lib/jvm/java
+		export JAVA_HOME=/home/java/jdk1.8.0_191
 		export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar:$JAVA_HOME/jre/lib/rt.jar
 		export PATH=$PATH:$JAVA_HOME/bin
 		```
@@ -73,7 +73,7 @@
 		etc/hadoop/hadoop-env.sh 添加如下内容
 		
 		```
-		export JAVA_HOME=/usr/lib/jvm/java/
+		export JAVA_HOME=/home/java/jdk1.8.0_191/
 		export HDFS_NAMENODE_USER="root"
 		export HDFS_DATANODE_USER="root"
 		export HDFS_SECONDARYNAMENODE_USER="root"
@@ -376,7 +376,7 @@
 	修改/hbase-2.1.2/conf/hbase-env.sh
 
 		```
-		export JAVA_HOME=/usr/lib/jvm/java/
+		export JAVA_HOME=/home/java/jdk1.8.0_191/
 		export HBASE_CLASSPATH=/lp/hadoop/hbase-2.1.2/conf
 		export HBASE_MANAGES_ZK=true
 		```
