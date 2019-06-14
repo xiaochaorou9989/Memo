@@ -81,13 +81,13 @@
 		export YARN_NODEMANAGER_USER="root"
 		```
 		
-		*** 修改etc/hadoop/core-site.xml，把配置改成： ***
+		修改etc/hadoop/core-site.xml，把配置改成： 
 		
 		```
 		<configuration>
 			<property>
 				<name>fs.defaultFS</name>
-				<value>hdfs://192.168.1.213:9001</value>
+				<value>hdfs://192.168.3.23:9001</value>
 			</property>
 			<property>
 				<name>io.file.buffer.size</name>
@@ -118,12 +118,12 @@
 
 			<property>
 				<name>dfs.namenode.http-address</name>
-				<value>192.168.1.213:8305</value>
+				<value>192.168.3.23:8305</value>
 			</property>
 
 			<property>
 				<name>dfs.namenode.secondary.http-address</name>
-				<value>192.168.1.214:8310</value>
+				<value>192.168.3.38:8310</value>
 			</property>
 
 			<!-- Configurations for DataNode: -->
@@ -146,11 +146,11 @@
 		<!-- Site specific YARN configuration properties -->
 			<property>
 				<name>yarn.resourcemanager.hostname</name>
-				<value>192.168.1.213</value>
+				<value>192.168.3.23</value>
 			</property>
 			<property>
 				<name>yarn.resourcemanager.webapp.address</name>
-				<value>192.168.1.213:8320</value>
+				<value>192.168.3.23:8320</value>
 			</property>
 			<property>
 				<name>yarn.nodemanager.aux-services</name>
@@ -178,7 +178,7 @@
 			</property>
 			<property>
 				<name>yarn.log.server.url</name>
-				<value>http://192.168.1.213:8325/jobhistory/logs/</value>
+				<value>http://192.168.3.23:8325/jobhistory/logs/</value>
 			</property>
 			<property>
 				<name>yarn.nodemanager.local-dirs</name>
@@ -218,12 +218,12 @@
 			<!--MapReduce JobHistory Server地址-->
 			<property>
 				<name>mapreduce.jobhistory.address</name>
-				<value>192.168.1.213:8330</value>
+				<value>192.168.3.23:8330</value>
 			</property>
 			<!--MapReduce JobHistory Server Web UI地址-->
 			<property>
 				<name>mapreduce.jobhistory.webapp.address</name>
-				<value>192.168.1.213:8331</value>
+				<value>192.168.3.23:8331</value>
 			</property>
 			<!--MR JobHistory Server管理的日志的存放位置-->
 			<property>
@@ -267,7 +267,7 @@
 		tar -czvf hadoop.tar.gz /lp/hadoop/hadoop-3.1.2/
 		
 		拷贝到其余节点：
-		scp hadoop.tar.gz root@192.168.1.214:/
+		scp hadoop.tar.gz root@192.168.3.38:/
 		
 		解压删除：
 		tar -xzvf hadoop.tar.gz
@@ -290,10 +290,10 @@
 		vim /etc/hosts
 
 		```
-		192.168.1.213 hadoop1
-		192.168.1.214 hadoop2
-		192.168.1.215 hadoop3
-		192.168.1.216 hadoop4
+		192.168.3.23 hadoop1
+		192.168.3.38 hadoop2
+		192.168.3.39 hadoop3
+		192.168.3.40 hadoop4
 		```
 
 		免密码登录自身（四台）
@@ -317,11 +317,11 @@
 		web地址
 
 		Hdfs页面：
-		主：192.168.1.213:8305
-		从：192.168.1.214:8310
+		主：192.168.3.23:8305
+		从：192.168.3.38:8310
 		
 		Yarn页面：
-		192.168.1.213:8320
+		192.168.3.23:8320
 
 
 三. Hbase
@@ -349,7 +349,7 @@
 		</property>
 		<property>
 			<name>hbase.rootdir</name>
-			<value>hdfs://192.168.1.213:9001/hbase</value>
+			<value>hdfs://192.168.3.23:9001/hbase</value>
 		</property>
 		<property>
 			<name>hbase.zookeeper.quorum</name>
@@ -409,7 +409,7 @@
 	./bin/hbase shell
 	
 	web页面访问
-	192.168.1.213:16010
+	192.168.3.23:16010
 
 
 四. Hive
@@ -510,4 +510,4 @@
 	./beeline -u jdbc:hive2://localhost:10000
 	端口号默认是10000
 
-	hiveserver2会启动一个WEB，端口号默认为10002，可以通过 http://192.168.1.213:10002/
+	hiveserver2会启动一个WEB，端口号默认为10002，可以通过 http://192.168.3.23:10002/
