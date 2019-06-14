@@ -24,9 +24,11 @@
 	```
 
 一. IP、DNS、主机名
+
 	linux 静态IP、DNS、主机名配置
 
 二. Hadoop
+
 	1. IP分配
 
 	```
