@@ -57,9 +57,11 @@
 		使得配置生效
 
 		. /etc/profile
+		
 		查看变量
 
 		echo $JAVA_HOME
+		
 		输出 /usr/lib/jvm/jre-1.8.0-openjdk-1.8.0.161-0.b14.el7_4.x86_64
 
 	4. 安装Hadoop
@@ -81,9 +83,10 @@
 		export HDFS_SECONDARYNAMENODE_USER="root"
 		export YARN_RESOURCEMANAGER_USER="root"
 		export YARN_NODEMANAGER_USER="root"
-		修改etc/hadoop/core-site.xml，把配置改成：
 		```
-
+		
+		修改etc/hadoop/core-site.xml，把配置改成：
+		
 		```
 		<configuration>
 			<property>
@@ -268,9 +271,11 @@
 		压缩配置好的hadoop文件夹
 
 		tar -czvf hadoop.tar.gz /lp/hadoop/hadoop-3.1.2/
+		
 		拷贝到其余节点：
 
 		scp hadoop.tar.gz root@192.168.1.214:/
+		
 		解压删除：
 
 		tar -xzvf hadoop.tar.gz
@@ -288,6 +293,7 @@
 		```
 
 		source /etc/profile
+		
 		配置hosts（四台）
 
 		vim /etc/hosts
@@ -309,18 +315,23 @@
 		ssh-copy-id -i ~/.ssh/id_rsa.pub hadoop2
 		ssh-copy-id -i ~/.ssh/id_rsa.pub hadoop3
 		ssh-copy-id -i ~/.ssh/id_rsa.pub hadoop4
+		
 		格式化HDFS [只有首次部署才可使用]【谨慎操作，只在master上操作】
 
 		/lp/hadoop/hadoop-3.1.2/bin/hdfs namenode -format myClusterName
+		
 		开启hadoop服务 【只在master上操作】
 
 		/lp/hadoop/hadoop-3.1.2/sbin/start-dfs.sh
 		/lp/hadoop/hadoop-3.1.2/sbin/start-yarn.sh
+		
 		web地址
 
 		Hdfs页面：
+		
 		主：192.168.1.213:8305
 		从：192.168.1.214:8310
+		
 		Yarn页面：
 		192.168.1.213:8320
 
@@ -340,6 +351,7 @@
 
 		tar -xzvf /tmp/hbase-2.1.2-bin.tar.gz
 		mv hbase-2.1.2/ /lp/hadoop/
+		
 		修改/hbase-2.1.2/conf/hbase-site.xml
 
 		```
@@ -392,24 +404,24 @@
 	把/lp/hadoop/hbase-2.1.2/lib/client-facing-thirdparty目录下的htrace-core-3.1.0-incubating.jar 复制到/lp/hadoop/hbase-2.1.2/lib
 
 	cp /hbase-2.1.2/lib/client-facing-thirdparty/htrace-core-3.1.0-incubating.jar /hbase-2.1.2/lib
+	
 	压缩配置好的hbase-2.1.2文件夹
-
 	tar -czvf hbase-2.1.2.tar.gz hadoop-3.1.2/
+	
 	拷贝到hadoop3节点：
-
 	scp hbase-2.1.2.tar.gz root@hadoop3:/lp/hadoop
+	
 	解压删除
-
 	tar -xzvf hbase-2.1.2.tar.gz
 	rm –rf hbase-2.1.2.tar.gz
+	
 	启动
-
 	./bin/start-hbase.sh
+	
 	进入shell
-
 	./bin/hbase shell
+	
 	web页面访问
-
 	192.168.1.213:16010
 
 
@@ -425,11 +437,10 @@
 		```
 
 	解压对应的hive
-
 	tar -xzvf /tmp/apache-hive-3.1.1-bin.tar.gz
 	mv apache-hive-3.1.1-bin/ /lp/hadoop/
+	
 	配置hive 进入apache-hive-3.1.1-bin/conf/目录 复制hive-env.sh.template 为 hive-env.sh
-
 	cp hive-env.sh.template hive-env.sh
 	
 	编辑hive-env.sh
@@ -480,11 +491,11 @@
 		```
 
 	复制hive-exec-log4j2.properties.template 为 hive-exec-log4j2.properties
-
 	cp hive-exec-log4j2.properties.template hive-exec-log4j2.properties
+	
 	复制hive-log4j2.properties.template为hive-log4j2.properties
-
 	cp hive-log4j2.properties.template hive-log4j2.properties
+	
 	下载mysql驱动放入/home/hadoop/apache-hive-3.1.1-bin/lib包中
 
 	在hadoop3安装mysql5.7版本，并且把root设置为任意主机访问或者hadoop1主机访问
@@ -494,13 +505,15 @@
 	grant all privileges  on *.* to root@'%' identified by "123456";
 	flush privileges;
 	select host,user from user;
+	
 	初始化（第一次启动）
 
 	./schematool -initSchema -dbType mysql
+	
 	启动
-
 	./hive
 	./hive --service hiveserver2
+	
 	启动hiveserver2使其他服务可以通过thrift接入hive
 
 	Mysql数据库中会自动创建hive数据库
