@@ -18,7 +18,7 @@
 ## centos7安装Hadoop+hbase+hive步骤 https://my.oschina.net/lwenhao/blog/3025661
 
 	```
-	https://mirrors.tuna.tsinghua.edu.cn/apache/hadoop/common/hadoop-3.1.2/hadoop-3.1.2.tar.gz
+	http://mirror.bit.edu.cn/apache/hadoop/common/hadoop-3.1.2/hadoop-3.1.2.tar.gz
 	http://mirror.bit.edu.cn/apache/hbase/2.1.5/hbase-2.1.5-bin.tar.gz
 	https://www-eu.apache.org/dist/hive/hive-3.1.1/apache-hive-3.1.1-bin.tar.gz
 	```
