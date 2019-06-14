@@ -32,10 +32,10 @@
 	1. IP分配
 
 		```
-		23 Namenode 主节点 hadoop1
-		38 Namenode 备份节点 hadoop2
-		39 Datanode1 hadoop3
-		40 Datanode2 hadoop4
+		192.168.3.23 Namenode 主节点 hadoop1
+		192.168.3.38 Namenode 备份节点 hadoop2
+		192.168.3.39 Datanode1 hadoop3
+		192.168.3.40 Datanode2 hadoop4
 		```
 
 	2. 安装jdk8（四台）（ova自带）
