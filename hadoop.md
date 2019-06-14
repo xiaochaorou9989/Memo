@@ -55,11 +55,9 @@
 		```
 
 		使得配置生效
-
 		. /etc/profile
 		
 		查看变量
-
 		echo $JAVA_HOME
 		
 		输出 /usr/lib/jvm/jre-1.8.0-openjdk-1.8.0.161-0.b14.el7_4.x86_64
@@ -67,15 +65,13 @@
 	4. 安装Hadoop
 	
 		创建文件夹（四台） mkdir /lp mkdir /lp/hadoop
-
 		复制hadoop安装包到/tmp（以下开始，操作只在主节点）
-
 		解压：
-
 		tar -xzvf /tmp/hadoop-3.1.2.tar.gz
 		mv hadoop-3.1.2/ /lp/hadoop/
+		
 		etc/hadoop/hadoop-env.sh 添加如下内容
-
+		
 		```
 		export JAVA_HOME=/usr/lib/jvm/java/
 		export HDFS_NAMENODE_USER="root"
@@ -260,7 +256,6 @@
 		```
 
 		修改etc/hadoop/workers
-
 		vim etc/hadoop/workers
 
 		```
@@ -269,15 +264,12 @@
 		```
 
 		压缩配置好的hadoop文件夹
-
 		tar -czvf hadoop.tar.gz /lp/hadoop/hadoop-3.1.2/
 		
 		拷贝到其余节点：
-
 		scp hadoop.tar.gz root@192.168.1.214:/
 		
 		解压删除：
-
 		tar -xzvf hadoop.tar.gz
 		rm –rf hadoop.tar.gz
 		
@@ -295,7 +287,6 @@
 		source /etc/profile
 		
 		配置hosts（四台）
-
 		vim /etc/hosts
 
 		```
@@ -310,25 +301,22 @@
 		ssh-keygen -t rsa -P '' -f ~/.ssh/id_rsa
 		cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
 		chmod 0600 ~/.ssh/authorized_keys
+	
 		master免密码登录worker【单台，只需在namenode1上执行】
-
 		ssh-copy-id -i ~/.ssh/id_rsa.pub hadoop2
 		ssh-copy-id -i ~/.ssh/id_rsa.pub hadoop3
 		ssh-copy-id -i ~/.ssh/id_rsa.pub hadoop4
 		
 		格式化HDFS [只有首次部署才可使用]【谨慎操作，只在master上操作】
-
 		/lp/hadoop/hadoop-3.1.2/bin/hdfs namenode -format myClusterName
 		
 		开启hadoop服务 【只在master上操作】
-
 		/lp/hadoop/hadoop-3.1.2/sbin/start-dfs.sh
 		/lp/hadoop/hadoop-3.1.2/sbin/start-yarn.sh
 		
 		web地址
 
 		Hdfs页面：
-		
 		主：192.168.1.213:8305
 		从：192.168.1.214:8310
 		
@@ -402,7 +390,6 @@
 
 
 	把/lp/hadoop/hbase-2.1.2/lib/client-facing-thirdparty目录下的htrace-core-3.1.0-incubating.jar 复制到/lp/hadoop/hbase-2.1.2/lib
-
 	cp /hbase-2.1.2/lib/client-facing-thirdparty/htrace-core-3.1.0-incubating.jar /hbase-2.1.2/lib
 	
 	压缩配置好的hbase-2.1.2文件夹
@@ -452,7 +439,6 @@
 		```
 
 	复制hive-default.xml.template 为 hive-site.xml
-
 	cp hive-default.xml.template hive-site.xml
 	
 	修改hive-site.xml
@@ -507,7 +493,6 @@
 	select host,user from user;
 	
 	初始化（第一次启动）
-
 	./schematool -initSchema -dbType mysql
 	
 	启动
