@@ -128,6 +128,8 @@ SET PASSWORD FOR 'user_name'@'host' = password('new_password_here');
 	UPDATE `user` SET `Password` = password('your_new_password_here') WHERE `User` = 'root';
 	FLUSH PRIVILEGES;
 	```
+	
+	**PS**: 5.7 版本 `Password` 更改为 `authentication_string` 字段。
 
 4. 退出 mysql，把第一步加入的东西去掉或注释掉，重启 mysql。
 
