@@ -1,0 +1,16 @@
+jdk https://pan.baidu.com/s/1zJWcDhaS-BqVkv4SxH4L_g 提取码: kurc 
+
+安装中有问题中断可根据情况手动修复，继续运行
+
+用伪分布式安装
+
+https://www.cnblogs.com/sharpxiajun/p/3151395.html
+
+/usr/local/hadoop/sbin/start-all.sh #启动
+
+/usr/local/hadoop/bin/hadoop fs -mkdir /test #创建文件夹
+
+/usr/local/hadoop/bin/hadoop fs -put /home/word.txt /test #上传
+
+/usr/local/hadoop/bin/hadoop jar /usr/local/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-examples-2.7.7.jar wordcount hdfs://127.0.0.1:9000/test/word.txt hdfs://127.0.0.1:9000/out #运行计算
+
