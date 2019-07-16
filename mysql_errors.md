@@ -15,3 +15,17 @@ Fix:
 4. 重启 MySQL。
 
 参考：[stackoverflow.com](https://stackoverflow.com/questions/18575755/xampp-mysql-could-not-open-single-table-tablespace-file-mysql-innodb-index-st)
+
+### 新建用户时提示 SQL Error (126): Incorrect key file for table '.\mysql\user.MYI'; try to repair it
+
+Fix：
+
+进入 MySQL, 执行以下命令修复表：
+
+```sql
+USE mysql;
+CHECK TABLE `user`;
+REPAIR TABLE `user`;
+```
+
+参考：[stackexchange.com](https://dba.stackexchange.com/questions/124956/sql-error-126-incorrect-key-file-for-table-mysql-user-myi-try-to-repair)
