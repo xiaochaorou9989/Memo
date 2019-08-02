@@ -69,3 +69,5 @@
 [hadoop学习](./hadoop)
 
 [hadoop](./hadoop.md)
+
+[python](./python.md)
