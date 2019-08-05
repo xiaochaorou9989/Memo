@@ -70,4 +70,6 @@
 
 [hadoop](./hadoop.md)
 
+[python](./python.md)
+
 [NGINX TIPS](./nginx_tips.md)
