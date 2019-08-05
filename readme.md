@@ -24,7 +24,7 @@
 
 [SQL Tips](./sql_tips.md)
 
-[Linux 入门](./linux_tips.md)
+[Linux 入门/运维](./linux_tips.md)
 
 [MySQL cli Tips](./mysql_cli_tips.md)
 
@@ -71,3 +71,5 @@
 [hadoop](./hadoop.md)
 
 [python](./python.md)
+
+[NGINX TIPS](./nginx_tips.md)
