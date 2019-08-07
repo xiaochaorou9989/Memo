@@ -73,3 +73,5 @@
 [python](./python.md)
 
 [NGINX TIPS](./nginx_tips.md)
+
+[ElasticSearch TIPS](./elastic_tips.md)
