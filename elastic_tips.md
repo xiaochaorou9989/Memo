@@ -42,7 +42,7 @@ input {
     # 是否记录最后运行相关信息，用于增量同步
     record_last_run => true
     # 最后运行信息记录保存路径，不设置则默认保存在用户根目录下
-	last_run_metadata_path => "/path/to/.my_last_run"
+    last_run_metadata_path => "/path/to/.my_last_run"
     # 定时规则，同 cron 规则
     schedule => "* * * * *"
     use_column_value => true
