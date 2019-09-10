@@ -66,9 +66,9 @@
 
 [docker](./docker)
 
-[hadoop学习](./hadoop)
+[hadoop](./hadoop)
 
-[hadoop](./hadoop.md)
+[python](./python.md)
 
 [python](./python.md)
 
